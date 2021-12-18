@@ -54,6 +54,13 @@ public enum Mission {
                 player.getInventory().remove(Material.DIAMOND);
                 break;
             case EXPERIENCE:
+                if (player.getLevel() < 500) {
+                    player.sendMessage("§cVocê precisa ter §e500 EXP's§c para concluir está missão!");
+                    return;
+                }
+                success = true;
+
+                player.setLevel(0);
                 break;
         }
 
